@@ -66,6 +66,7 @@ _pb.Run();
 All together one select query can look like this,
 
 `
+
 QueryBuilder.DatabaseConnection.SetServerString("localhost","root","root","northwind");
 
 ParentBuilder _pb = new ParentBuilder();
@@ -74,4 +75,5 @@ Dictionary<string, List<string>> dict = DictionaryBuilder.BuildDictionary(new Li
 _pb.AddChild(new ChildBuilder("categories", dict, ParentBuilder.Statements.Select));
 
 _pb.Run();
+
 `
