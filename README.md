@@ -62,3 +62,16 @@ Repeat this step or add any of the other queries needed to the parent, then use 
 `
 _pb.Run();
 `
+
+All together one select query can look like this,
+
+`
+QueryBuilder.DatabaseConnection.SetServerString("localhost","root","root","northwind");
+
+            ParentBuilder _pb = new ParentBuilder();
+
+            Dictionary<string, List<string>> dict = DictionaryBuilder.BuildDictionary(new List<string>() { "CategoryID", "CategoryName", "Picture" });
+            _pb.AddChild(new ChildBuilder("categories", dict, ParentBuilder.Statements.Select));
+
+            _pb.Run();
+`
