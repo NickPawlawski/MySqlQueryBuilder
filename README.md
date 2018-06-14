@@ -31,10 +31,32 @@ ParentBuilder _pb = new ParentBuilder();
 
 The child builder class is responsible for a single query. Each child gets loaded into the parentbuilder class. When the parent runs 
 each of the childs queries are ran in the sequence they were loaded into the parent. Here is an example of creating a new child. 
-Details of this process will be shown later.
+The parameters of creating a child are the table name, the dictionary containing the details of the query then what query we want to run.
 
 `
-new ChildBuilder("categories", dict, ParentBuilder.Statements.Select)
+new ChildBuilder("categories", dict, ParentBuilder.Statements.Select);
 `
 
+#### Select
+Creating a select statement has never been easier. First start by using the dictionary builder class to build a dictionary using the 
+column names. In this example we want to look at the colums CategoryID, CategoryID, and Picture.
 
+`
+Dictionary<string, List<string>> dict = DictionaryBuilder.BuildDictionary(new List<string>() { "CategoryID", "CategoryName", "Picture" });
+`
+Once we have built the dictionary we create a child with that dictionary. 
+
+`
+new ChildBuilder("categories", dict, ParentBuilder.Statements.Select);
+`
+Once the child is created we can add it to the parent. I usually choose to do this in one step that looks like this.
+
+`
+_pb.AddChild(new ChildBuilder("categories", dict, ParentBuilder.Statements.Select));
+`
+
+Repeat this step or add any of the other queries needed to the parent, then use the run method to run the queries.
+
+`
+_pb.Run();
+`
