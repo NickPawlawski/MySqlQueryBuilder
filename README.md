@@ -67,7 +67,7 @@ All together one select query can look like this,
 
 ```
 
-QueryBuilder.DatabaseConnection.SetServerString("localhost","root","root","northwind");
+DatabaseConnection.SetServerString("localhost","root","root","northwind");
 
 ParentBuilder _pb = new ParentBuilder();
 
