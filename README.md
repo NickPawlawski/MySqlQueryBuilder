@@ -68,10 +68,10 @@ All together one select query can look like this,
 `
 QueryBuilder.DatabaseConnection.SetServerString("localhost","root","root","northwind");
 
-            ParentBuilder _pb = new ParentBuilder();
+ParentBuilder _pb = new ParentBuilder();
 
-            Dictionary<string, List<string>> dict = DictionaryBuilder.BuildDictionary(new List<string>() { "CategoryID", "CategoryName", "Picture" });
-            _pb.AddChild(new ChildBuilder("categories", dict, ParentBuilder.Statements.Select));
+Dictionary<string, List<string>> dict = DictionaryBuilder.BuildDictionary(new List<string>() { "CategoryID", "CategoryName", "Picture" });
+_pb.AddChild(new ChildBuilder("categories", dict, ParentBuilder.Statements.Select));
 
-            _pb.Run();
+_pb.Run();
 `
