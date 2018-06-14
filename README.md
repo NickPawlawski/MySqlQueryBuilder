@@ -44,11 +44,13 @@ column names. In this example we want to look at the colums CategoryID, Category
 `
 Dictionary<string, List<string>> dict = DictionaryBuilder.BuildDictionary(new List<string>() { "CategoryID", "CategoryName", "Picture" });
 `
+
 Once we have built the dictionary we create a child with that dictionary. 
 
 `
 new ChildBuilder("categories", dict, ParentBuilder.Statements.Select);
 `
+
 Once the child is created we can add it to the parent. I usually choose to do this in one step that looks like this.
 
 `
