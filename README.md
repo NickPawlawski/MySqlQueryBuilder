@@ -65,7 +65,7 @@ _pb.Run();
 
 All together one select query can look like this,
 
-`
+```
 
 QueryBuilder.DatabaseConnection.SetServerString("localhost","root","root","northwind");
 
@@ -76,4 +76,4 @@ _pb.AddChild(new ChildBuilder("categories", dict, ParentBuilder.Statements.Selec
 
 _pb.Run();
 
-`
+```
