@@ -28,9 +28,9 @@ namespace MySqlQueryBuilder
             _pb.AddChild(new ChildBuilder("order_details", dict3, ParentBuilder.Statements.Update,"UA"));
 
             Dictionary<string, List<string>> dict4 = DictionaryBuilder.BuildDictionary(new List<string>() { "CategoryName", "Picture", "Description" });
-            dict4.Values.ElementAt(0).Add("69 laasdol 420");
-            dict4.Values.ElementAt(1).Add("Hellaasdo.jpg");
-            dict4.Values.ElementAt(2).Add("HAHaasdAHAHAHA");
+            dict4.Values.ElementAt(0).Add("Test123");
+            dict4.Values.ElementAt(1).Add("Hello.jpg");
+            dict4.Values.ElementAt(2).Add("Hahahaha");
 
             _pb.AddChild(new ChildBuilder("categories", dict4, ParentBuilder.Statements.Insert));
 
